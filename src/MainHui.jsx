@@ -17,7 +17,11 @@ export const MainHui = (props) => {
                 value={valueForInput}
                 onChange={(e) => setValueForInput(e.target.value)}
             />
-            <p>{viewData}</p>
+            {valueForInput?.length > 0 ?
+                <p>{viewData}</p>
+                :
+                <p>Введи символ долбоеб</p>
+            }
             <button
                 onClick={() => setViewData("Заебись!")}
             >
