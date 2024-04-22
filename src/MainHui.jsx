@@ -19,7 +19,7 @@ export const MainHui = (props) => {
             />
             <p>{viewData}</p>
             <button
-                onClick={() => setViewData(valueForInput)}
+                onClick={() => setViewData("Заебись!")}
             >
                 Показать что ввел
             </button>
