@@ -10,6 +10,21 @@ export const MainHui = (props) => {
     const [valueForInput, setValueForInput] = useState('');
     const [viewData, setViewData] = useState('');
 
+    const showTextFromClickButton = () => {
+        // if (valueForInput?.length < 1) {
+        //     setViewData("Введи символ долбоеб!")
+        // } else {
+        //     setViewData("Заебись!")
+        // }
+        setViewData(valueForInput?.length < 1 ? "Введи символ долбоеб!" : "Заебись!");
+    }
+
+    // {valueForInput?.length > 0 ?
+    //     <p>{viewData}</p>
+    //     :
+    //     <p>Введи символ долбоеб</p>
+    // }
+
     return (
         <div>
             <input 
@@ -17,13 +32,9 @@ export const MainHui = (props) => {
                 value={valueForInput}
                 onChange={(e) => setValueForInput(e.target.value)}
             />
-            {valueForInput?.length > 0 ?
-                <p>{viewData}</p>
-                :
-                <p>Введи символ долбоеб</p>
-            }
+            <p>{viewData}</p>
             <button
-                onClick={() => setViewData("Заебись!")}
+                onClick={showTextFromClickButton}
             >
                 Показать что ввел
             </button>
